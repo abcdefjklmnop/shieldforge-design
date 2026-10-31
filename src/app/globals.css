@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+/* ─── Design Tokens ─── */
+:root {
+  --bg:     #070b12;
+  --bg2:    #0b1220;
+  --bg3:    #0f1a2e;
+  --border: rgba(51, 93, 168, 0.16);
+  --border2: rgba(51, 93, 168, 0.28);
+  --accent: #2563eb;
+  --cyan:   #06b6d4;
+  --green:  #10b981;
+  --amber:  #f59e0b;
+  --red:    #ef4444;
+  --text:   #e2e8f4;
+  --muted:  #6b7fa0;
+  --card:   rgba(11, 18, 32, 0.9);
+  --glass:  rgba(15, 26, 46, 0.6);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  /* subtle grid overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px);
+    background-size: 52px 52px;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* ─── Utilities ─── */
+@layer utilities {
+  .grad-text {
+    background: linear-gradient(135deg, #06b6d4 0%, #2563eb 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass {
+    background: var(--glass);
+    backdrop-filter: blur(18px);
+  }
+  .section-z { position: relative; z-index: 1; }
+  .eyebrow {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.13em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: var(--cyan);
+    opacity: 0.6;
+  }
+  .live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: blink 2s infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
