@@ -47,10 +47,6 @@ Produksjonsbygg med typekontroll er kjørt uten feil. Nettlesertest av konseptme
 
 Avhengighetene er beholdt slik de sto i kilden og er **ikke** oppgradert eller sårbarhetsrevidert i denne publiseringen. Innholdet er illustrasjoner. Prosjektet er ikke ment som en operativ nettside for en sikkerhetstjeneste.
 
-## Bakgrunn
-
-Prosjektet inngår i Karos Mokrians portefølje og er utviklet med KI-assistanse. Beskrivelsene over gjelder det koden faktisk demonstrerer.
-
 ## Lisens
 
 MIT for koden i dette repoet – se [LICENSE](LICENSE). Tredjepartsbiblioteker beholder egne vilkår.
